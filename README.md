@@ -5,7 +5,9 @@
 This is a basic Content Management System created by following Kevin Skoglund's Ruby on Rails course. It will differ in that the course uses MYSQL and this project will use PostgreSQL.
 
 Ruby 2.4.2
+
 Rails 5.1.4
+
 PostgreSQL 9.5.10
 
 
