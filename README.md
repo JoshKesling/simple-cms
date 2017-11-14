@@ -1,24 +1,30 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+** This is a work-in-progress and this README will be updated as the project progresses. **
 
-Things you may want to cover:
+This is a basic Content Management System created by following Kevin Skoglund's Ruby on Rails course. It will differ in that the course uses MYSQL and this project will use PostgreSQL.
 
-* Ruby version
+Ruby 2.4.2
+Rails 5.1.4
+PostgreSQL 9.5.10
 
-* System dependencies
 
-* Configuration
 
-* Database creation
+** To be completed later **
+#This README would normally document whatever steps are necessary to get the
 
-* Database initialization
+#Things you may want to cover:
 
-* How to run the test suite
+#* System dependencies
 
-* Services (job queues, cache servers, search engines, etc.)
+#* Configuration
 
-* Deployment instructions
+#* Database creation
 
-* ...
+#* Database initialization
+
+#* How to run the test suite
+
+#* Services (job queues, cache servers, search engines, etc.)
+
+#* Deployment instructions
