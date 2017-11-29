@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   layout false
 
   def index
-    @pages = Pages.sorted
+    @pages = Page.sorted
   end
 
   def show
@@ -32,7 +32,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     if @page.update_attributes(page_params)
       flash[:notice] = "Page #{@page.name} was updated successfully."
-      redirect_to(action: :show, id: @subject.id)
+      redirect_to(action: :show, id: @page.id)
     else
       flash[:error] = "There was an error updating the page."
       render(:edit)
