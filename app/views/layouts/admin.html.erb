@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Simple CMS Admin</title>
+  </head>
+  <body>
+    <div id="header">
+      <h1>Simple CMS Admin</h1>
+    </div>
+    <div id="main">
+      <%if !flash[:notice].blank? %>
+        <div class="notice">
+            <%= flash[:notice] %>
+        </div>
+      <% end %>
+      <div id="content">
+        <%= yield %>
+      </div>
+    </div>
+    <div id="footer">
+      <p id="copywrite">&copy; Josh Kesling / JoshKesling.com</p>
+    </div>
+  </body>
+</html>
