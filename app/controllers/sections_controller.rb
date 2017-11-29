@@ -32,6 +32,7 @@ class SectionsController < ApplicationController
       flash[:notice] = "Section updated successfully."
       redirect_to(action: :show, id: @section.id)
     else
+      flash[:error] = "There was an error updating the section."
       render(:edit)
     end
   end
