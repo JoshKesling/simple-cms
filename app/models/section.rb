@@ -7,5 +7,6 @@ class Section < ApplicationRecord
   scope :invisible, -> {where (:visible = 'false')}
   scope :sorted, -> {order('sections.position ASC')}
   scope :newest_first, -> {order('sections.created_at DESC')}
+  scope :search, lambda { |query| where(['name LIKE ?', "%#{query}%"])}
 
 end

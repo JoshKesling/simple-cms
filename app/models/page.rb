@@ -7,4 +7,5 @@ class Page < ApplicationRecord
   scope :invisible,     -> { where(visible: false) }
   scope :sorted,        -> { order('pages.position ASC') }
   scope :newest_first,  -> { order('pages.created_at DESC') }
+  scope :search, lambda { |query| where(['name LIKE ?', "%#{query}%"])}
 end
