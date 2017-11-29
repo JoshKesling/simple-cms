@@ -16,7 +16,6 @@
       <th>Visible</th>
       <th>Page ID</th>
       <th>Content Type</th>
-      <th>Content</th>
       <th>Actions</th>
     </tr>
     <% @sections.each do |section| %>
@@ -26,7 +25,6 @@
         <td class="center"><%= section.visible ? 'Yes' : 'No' %></td>
         <td class="center"><%= section.page_id %></td>
         <td class="center"><%= section.content_type %></td>
-        <td class="center"><%= section.content %></td>
         <td class="actions">
           <%= link_to("Show", {:action => 'show', :id => section.id}, :class => 'action show') %>
           <%= link_to("Edit", {:action => 'edit', :id => section.id}, :class => 'action edit') %>
