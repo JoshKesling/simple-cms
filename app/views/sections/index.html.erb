@@ -10,7 +10,7 @@
       <th>&nbsp;</th>
       <th>Section</th>
       <th>Visible</th>
-      <th>Page ID</th>
+      <th>Page</th>
       <th>Content Type</th>
       <th>Actions</th>
     </tr>
@@ -19,7 +19,7 @@
         <td><%= section.position %></td>
         <td><%= section.name %></td>
         <td class="center"><%= status_tag(section.visible) %></td>
-        <td class="center"><%= section.page_id %></td>
+        <td class="center"><%= section.page.name if section.page %></td>
         <td class="center"><%= section.content_type %></td>
         <td class="actions">
           <%= link_to("Show", {:action => 'show', :id => section.id}, :class => 'action show') %>
