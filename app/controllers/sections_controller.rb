@@ -38,7 +38,6 @@ class SectionsController < ApplicationController
       redirect_to(action: :show, id: @section.id)
     else
       @pages = Page.order('position ASC')
-      flash[:error] = "There was an error updating the section."
       render(:edit)
     end
   end

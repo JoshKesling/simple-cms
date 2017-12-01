@@ -21,7 +21,6 @@ class PagesController < ApplicationController
       flash[:notice] = "Page #{@page.name} was created successfully."
       redirect_to(action: :index)
     else
-      flash[:error] = "There was an error creating the page."
       @subjects = Subject.order('position ASC')
       @page_count = Page.count + 1
       render(:new)
@@ -40,7 +39,6 @@ class PagesController < ApplicationController
       flash[:notice] = "Page #{@page.name} was updated successfully."
       redirect_to(action: :show, id: @page.id)
     else
-      flash[:error] = "There was an error updating the page."
       @subjects = Subject.order('position ASC')
       @page_count = Page.count
       render(:edit)
