@@ -20,5 +20,5 @@
 <hr>
 
 <%= sanitize(evil_string) %> <br>
-<%= sanitize(simple_string, :tags => []) %> <br>
-<%= sanitize(simple_string, :tags => %w[strong em a]) %> <br>
+<%= sanitize(simple_string, tags: []) %> <br>
+<%= sanitize(simple_string, tags: %w[strong em a]) %> <br>
