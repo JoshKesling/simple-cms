@@ -1,12 +1,12 @@
 <% @page_title = "Sections" %>
 
-<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<%= link_to("<< Back to List", {controller: 'page', action: 'index', page_id: @page.id, subject_id: @subject.id}, class: 'back-link') %>
 
 <div class="sections delete">
 
   <h2>Delete Sections</h2>
 
-  <%= form_for(:section, :url => {:action => 'destroy', :id => @section.id}) do |f| %>
+  <%= form_for(:section, url: {action: 'destroy', id: @section.id, page_id: @page.id, subject_id: @subject.id}) do |f| %>
 
     <p>Are you sure you want to permenently delete this section?</p>
 

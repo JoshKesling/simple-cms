@@ -27,6 +27,7 @@
         <td class="center"><%= status_tag(page.visible) %></td>
         <td class="center"><%= page.sections.size %></td>
         <td class="actions">
+          <%= link_to("View Sections", {controller: 'sections', page_id: page.id, subject_id: @subject.id}, class: 'action show') %>
           <%= link_to("Show", {:action => 'show', subject_id: @subject.id, :id => page.id}, :class => 'action show') %>
           <%= link_to("Edit", {:action => 'edit', subject_id: @subject.id, :id => page.id}, :class => 'action edit') %>
           <%= link_to("Delete", {:action => 'delete', subject_id: @subject.id, :id => page.id}, :class => 'action delete') %>

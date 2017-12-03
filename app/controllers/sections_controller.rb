@@ -2,9 +2,11 @@ class SectionsController < ApplicationController
   layout "admin"
 
   before_action :confirm_logged_in
+  before_action :find_page
+  before_action :find_subject
 
   def index
-    @sections = Section.sorted
+    @sections = @page.sections.sorted
   end
 
   def show
@@ -21,7 +23,7 @@ class SectionsController < ApplicationController
     @section = Section.new(section_params)
     if @section.save
       flash[:notice] = "Section created successfully."
-      redirect_to(action: :index)
+      redirect_to(action: :index, page_id: @page.id)
     else
       @section_count = Section.count + 1
       render(:new)
@@ -38,7 +40,7 @@ class SectionsController < ApplicationController
     @section = Section.find(params[:id])
     if @section.update_attributes(section_params)
       flash[:notice] = "Section updated successfully."
-      redirect_to(action: :show, id: @section.id)
+      redirect_to(action: :show, id: @section.id, page_id: @page.id)
     else
       @pages = Page.order('position ASC')
       render(:edit)
@@ -52,7 +54,7 @@ class SectionsController < ApplicationController
   def destroy
     section = Section.find(params[:id]).destroy
     flash[:notice] = "Section #{section.name} deleted successfully."
-    redirect_to(action: :index)
+    redirect_to(action: :index, page_id: @page.id)
   end
 
   # Begin private methods
@@ -61,4 +63,17 @@ class SectionsController < ApplicationController
   def section_params
     params.require(:section).permit(:page_id, :name, :position, :visible, :content_type, :content)
   end
+
+  def find_page
+    if params[:page_id]
+      @page = Page.find(params[:page_id])
+    end
+  end
+
+  def find_subject
+    if params[:subject_id]
+      @subject = Subject.find(params[:subject_id])
+    end
+  end
+
 end
